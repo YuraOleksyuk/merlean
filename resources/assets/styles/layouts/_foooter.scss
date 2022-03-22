@@ -1,0 +1,35 @@
+.footer {
+  padding: 8rem 0;
+  background-color: #FCFAEF;
+
+  @media (max-width: 576px) {
+    padding: 4.8rem 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(3, 2.3rem);
+    grid-column-gap: 26px;
+    margin-bottom: 1.6rem;
+  }
+
+  &__consulting-text {
+    font: 1.7rem/1.2 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: #000000;
+  }
+
+  &__help {
+    padding: .8rem 0 2.5rem;
+  }
+}

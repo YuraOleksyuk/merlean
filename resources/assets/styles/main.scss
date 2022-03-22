@@ -1,0 +1,25 @@
+@import "~swiper/swiper";
+@import "common/variables";
+
+@import "common/global";
+
+/** Import theme styles */
+@import "common/typography";
+@import "common/reset";
+@import "common/global";
+@import "components/buttons";
+
+@import "layouts/hero";
+@import "layouts/header";
+@import "layouts/our-story";
+@import "layouts/services";
+@import "layouts/industries";
+@import "layouts/contact-us";
+@import "layouts/capabilities";
+@import "layouts/our-clients";
+@import "layouts/foooter";
+
+
+//.capabilities {
+//  display: none;
+//}

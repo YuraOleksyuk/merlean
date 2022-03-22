@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Urbanist:wght@400;700&display=swap');
+
+.title {
+  font: 4.4rem/1.2 'Urbanist', sans-serif;
+  font-weight: bold;
+  margin-bottom: 4rem;
+
+  &--m0 {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 3.2rem;
+  }
+}
+
+.content {
+  font: 1.7rem/1.5 'Source Sans Pro', sans-serif;
+  color: #000;
+
+  p {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.link,
+.phone-group {
+  text-decoration: none;
+  font: 1.7rem/1.2 'Source Sans Pro', sans-serif;
+  color: #000000;
+}

@@ -1,0 +1,36 @@
+.site {
+
+  &--purplox {
+    --main-bg-color: #CFA9FF;
+    --main-bg-title-color: #FFFFFF;
+    --btn-bg-color: #FFFFFF;
+    --btn-border-color: #6104D7;
+    --btn-text-color: #6104D7;
+    --industries--icon-bg: #CFA9FF;
+    --contact-us-title-color: #fff;
+    --svg-stroke-color: #6104D7;
+  }
+
+  &--merlean {
+    --main-bg-color: #C6EEFF;
+    --main-bg-title-color: #20303C;
+    --btn-bg-color: #00B4FF;
+    --btn-border-color: #00B4FF;
+    --btn-text-color: #FFFFFF;
+    --industries--icon-bg: #60D0FF;
+    --contact-us-title-color: #20303C;
+    --svg-stroke-color: #00B4FF;
+  }
+
+  &--squarcl {
+    --main-bg-color: #D0D8FF;
+    --main-bg-title-color: #20303C;
+    --btn-bg-color: #0429D7;
+    --btn-border-color: #00B4FF;
+    --btn-text-color: #FFFFFF;
+    --industries--icon-bg: #99A9F7;
+    --contact-us-title-color: #20303C;
+    --svg-stroke-color: #0429D7;
+  }
+
+}

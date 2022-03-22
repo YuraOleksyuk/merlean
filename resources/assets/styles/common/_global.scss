@@ -1,0 +1,27 @@
+html {
+  font-size: 10px;
+
+  @media (max-width: 1100px) {
+    font-size: 9px;
+  }
+
+}
+
+.container {
+  width: 100%;
+  max-width: 121rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  &--lg {
+    max-width: 100%;
+  }
+}
+
+.fill {
+  fill: var(--svg-stroke-color);
+}
+
+.stroke {
+  stroke: var(--svg-stroke-color);
+}

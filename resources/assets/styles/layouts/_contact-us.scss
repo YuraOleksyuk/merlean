@@ -1,0 +1,84 @@
+.contact-us {
+  background-color: var(--main-bg-color);
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 10;
+    font: 4.8rem/1.25 'Urbanist', sans-serif;
+    font-weight: bold;
+    color: var(--contact-us-title-color);
+
+    @media (max-width: 576px) {
+      text-align: center;
+      margin-bottom: 8rem;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 8;
+
+    @media (max-width: 991px) {
+      position: static;
+    }
+
+    @media (max-width: 380px) {
+      width: 100%;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    z-index: -1;
+    top: 80%;
+    transform: translateY(-50%);
+    right: 109%;
+
+    @media (max-width: 991px) {
+      left: 0;
+      right: auto;
+      top: 60%;
+    }
+
+    @media (max-width: 576px) {
+      top: auto;
+      bottom: 0;
+      transform: translateY(0);
+    }
+
+    svg {
+      stroke: var(--svg-stroke-color);
+
+      @media (max-width: 576px) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__line {
+    stroke-dasharray: 1086.68, 1086.68;
+    stroke-dashoffset: -1086.68;
+
+    @media (max-width: 991px) {
+      stroke-dasharray: 0;
+      stroke-dashoffset: 0;
+    }
+  }
+}
