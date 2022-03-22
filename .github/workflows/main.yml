@@ -12,7 +12,7 @@ jobs:
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ftp.merlean.it
-          user: ${{ FTP_USER }}
-          password: ${{ FTP_PASSWORD }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local_dir: "./"
           delete: "false"
