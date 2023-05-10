@@ -1,0 +1,40 @@
+.reviews {
+  position: relative;
+  padding: 8rem 0;
+
+  &__title {
+    font: 2.4rem/3rem 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    max-width: 129.8rem;
+    margin: 0 auto;
+    padding: 0 6.4rem; // +8.8
+  }
+
+  &__subtitle {
+    font: 1.7rem/2.5rem 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    margin-bottom: .7rem;
+    color: #5c5c5cdd;
+  }
+
+  &__quote {
+    font: 1.7rem/3rem 'Source Sans Pro', sans-serif;
+    font-style: italic;
+
+    p {
+      display: inline-block;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    &::after {
+      color: var(--svg-stroke-color);
+    }
+  }
+}

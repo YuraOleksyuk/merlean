@@ -1,4 +1,4 @@
-import {Swiper} from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 
 export default {
   init() {
@@ -8,7 +8,6 @@ export default {
     }
 
     if (window.innerWidth < 768) {
-
       const serviceItems = document.querySelectorAll('.services__item');
 
       if (serviceItems.length) {
@@ -41,10 +40,10 @@ export default {
         loop: false,
         breakpoints: {
           768: {
-            slidesPerView: clientsItems.length < 4 ? clientsItems.length : 4,
+            slidesPerView: 3,
           },
           991: {
-            slidesPerView: clientsItems.length < 7 ? clientsItems.length : 7,
+            slidesPerView: 4,
           },
         },
       });
@@ -52,6 +51,36 @@ export default {
 
     if (clientsList) {
       initClienstSlider();
+    }
+
+    const reviewsSlider = document.querySelector('.reviews__list');
+    const reviewsSliderItems = document.querySelectorAll('.reviews__item');
+
+    console.log('reviewsSliderItems.length > ', reviewsSliderItems.length);
+
+    const initReviewsSlider = () => {
+      new Swiper('.reviews__list', {
+        modules: [Navigation],
+        navigation: {
+          nextEl: '.reviews-button-next',
+          prevEl: '.reviews-button-prev',
+        },
+        slidesPerView: 1,
+        loop: false,
+        spaceBetween: 20,
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          991: {
+            slidesPerView: reviewsSliderItems.length < 4 ? reviewsSliderItems.length : 3,
+          },
+        },
+      });
+    }
+
+    if (reviewsSlider) {
+      initReviewsSlider();
     }
 
 

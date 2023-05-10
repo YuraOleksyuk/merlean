@@ -1,10 +1,14 @@
 @php
   $services = get_field('services');
   $blockId = isset($block) && array_key_exists('anchor', $block) ? $block['anchor'] : '';
+  $fontSize = get_field('font-size');
+  $fontSize = $fontSize['value'] ? $fontSize['value'] : 'large';
+  $hideBlock = get_field('hide');
+  $blockDisplayProperty = $hideBlock ? 'no_display' : '';
 @endphp
 
 @if(!get_field('is_example') && (get_field('visability') != 'hidden' || is_admin()))
-  <section class="services" @if($blockId) id="{{$blockId}}" @endif>
+  <section class="services {{ $blockDisplayProperty }}" @if($blockId) id="{{$blockId}}" @endif>
     <div class="container">
       <h2 class="title">{{ get_field('title') }}</h2>
       <div class="services__list services__list--{{sizeof($services)}}">
@@ -24,7 +28,7 @@
               </div>
             @else
               <div class="services__text">
-                <div class="services__text--content">
+                <div class="services__text--content {{ $fontSize }}">
                   {!! $service['text'] !!}
                 </div>
               </div>

@@ -1,4 +1,4 @@
-@import "~swiper/swiper";
+@import "~swiper/swiper-bundle.css";
 @import "common/variables";
 
 @import "common/global";
@@ -17,8 +17,15 @@
 @import "layouts/contact-us";
 @import "layouts/capabilities";
 @import "layouts/our-clients";
+@import "layouts/reviews";
 @import "layouts/foooter";
 
+@import "404";
+
+
+.no_display {
+  display: none!important;
+}
 
 //.capabilities {
 //  display: none;

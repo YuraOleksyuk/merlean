@@ -8,7 +8,7 @@ use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
 function get_hash() {
-    return '20220309122740'; // Run at console -> date +%Y%m%d%H%M%S
+    return '20220411115551'; // Run at console -> date +%Y%m%d%H%M%S
 }
 
 /**
@@ -19,6 +19,10 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, $hash);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), [], $hash, true);
+
+    if (is_404()) {
+        wp_enqueue_style('sage/404.css', asset_path('styles/404.css'), false, $hash);
+    }
 
     wp_dequeue_script( 'jquery');
     wp_deregister_script( 'jquery');
@@ -223,6 +227,17 @@ add_action('acf/init', function () {
                 'name' => 'our-clients',
                 'title' => __('Landing page | Our clients'),
                 'description' => __('A custom landing page Our clients block.'),
+                'category' => 'formatting',
+                'icon' => [
+                    'background' => '#474D6A',
+                    'foreground' => '#FFF',
+                    'src' => 'admin-comments'
+                ]
+            ],
+            [
+                'name' => 'reviews',
+                'title' => __('Landing page | Reviews'),
+                'description' => __('A custom landing page Reviews block.'),
                 'category' => 'formatting',
                 'icon' => [
                     'background' => '#474D6A',

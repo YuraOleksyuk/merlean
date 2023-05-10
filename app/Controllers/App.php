@@ -66,6 +66,10 @@ class App extends Controller
     }
 
     public static function getPageType() {
-        return 'site site--' . get_field('page_type');
+        $pageType = get_field('page_type', 'options');
+        if (!$pageType) {
+            $pageType = 'merlean';
+        }
+        return 'site site--' . $pageType;
     }
 }

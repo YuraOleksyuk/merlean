@@ -3,9 +3,11 @@
   $heroType = get_field('hero_type');
   $btn = get_field('button');
   $blockId = isset($block) && array_key_exists('anchor', $block) ? $block['anchor'] : '';
+  $hideBlock = get_field('hide');
+  $blockDisplayProperty = $hideBlock ? 'no_display' : '';
 @endphp
 
-<section @if($blockId) id="{{$blockId}}" @endif class="hero">
+<section @if($blockId) id="{{$blockId}}" @endif class="hero {{ $blockDisplayProperty }}">
   <div class="container hero__container hero__container--{{$heroType}}">
     <div class="hero__logo">
       @if($logo)

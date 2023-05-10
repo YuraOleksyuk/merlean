@@ -1,10 +1,12 @@
 @php
   $industries = get_field('industries');
   $blockId = isset($block) && array_key_exists('anchor', $block) ? $block['anchor'] : '';
+  $hideBlock = get_field('hide');
+  $blockDisplayProperty = $hideBlock ? 'no_display' : '';
 @endphp
 
 @if(!get_field('is_example') && (get_field('visability') != 'hidden' || is_admin()))
-  <section @if($blockId) id="{{$blockId}}" @endif class="industries">
+  <section @if($blockId) id="{{$blockId}}" @endif class="industries {{ $blockDisplayProperty }}">
     <div class="container industries__container">
       <h2 class="title">{{ get_field('title') }}</h2>
       @if($industries)

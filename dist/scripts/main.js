@@ -905,7 +905,6 @@ Router.prototype.loadEvents = function loadEvents () {
     }
 
     if (window.innerWidth < 768) {
-
       var serviceItems = document.querySelectorAll('.services__item');
 
       if (serviceItems.length) {
@@ -933,15 +932,15 @@ Router.prototype.loadEvents = function loadEvents () {
     var clientsItems = document.querySelectorAll('.our-clients__item');
 
     var initClienstSlider = function () {
-      new __WEBPACK_IMPORTED_MODULE_0_swiper__["a" /* Swiper */]('.our-clients__list', {
+      new __WEBPACK_IMPORTED_MODULE_0_swiper__["b" /* default */]('.our-clients__list', {
         slidesPerView: clientsItems.length < 2 ? clientsItems.length : 2,
         loop: false,
         breakpoints: {
           768: {
-            slidesPerView: clientsItems.length < 4 ? clientsItems.length : 4,
+            slidesPerView: 3,
           },
           991: {
-            slidesPerView: clientsItems.length < 7 ? clientsItems.length : 7,
+            slidesPerView: 4,
           },
         },
       });
@@ -949,6 +948,36 @@ Router.prototype.loadEvents = function loadEvents () {
 
     if (clientsList) {
       initClienstSlider();
+    }
+
+    var reviewsSlider = document.querySelector('.reviews__list');
+    var reviewsSliderItems = document.querySelectorAll('.reviews__item');
+
+    console.log('reviewsSliderItems.length > ', reviewsSliderItems.length);
+
+    var initReviewsSlider = function () {
+      new __WEBPACK_IMPORTED_MODULE_0_swiper__["b" /* default */]('.reviews__list', {
+        modules: [__WEBPACK_IMPORTED_MODULE_0_swiper__["a" /* Navigation */]],
+        navigation: {
+          nextEl: '.reviews-button-next',
+          prevEl: '.reviews-button-prev',
+        },
+        slidesPerView: 1,
+        loop: false,
+        spaceBetween: 20,
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          991: {
+            slidesPerView: reviewsSliderItems.length < 4 ? reviewsSliderItems.length : 3,
+          },
+        },
+      });
+    }
+
+    if (reviewsSlider) {
+      initReviewsSlider();
     }
 
 
@@ -1043,8 +1072,8 @@ Router.prototype.loadEvents = function loadEvents () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_core_js__ = __webpack_require__(17);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__core_core_js__["a"]; });
-/* unused harmony reexport default */
+/* unused harmony reexport Swiper */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__core_core_js__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_virtual_virtual_js__ = __webpack_require__(78);
 /* unused harmony reexport Virtual */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_keyboard_keyboard_js__ = __webpack_require__(79);
@@ -1052,7 +1081,7 @@ Router.prototype.loadEvents = function loadEvents () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_mousewheel_mousewheel_js__ = __webpack_require__(80);
 /* unused harmony reexport Mousewheel */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_navigation_navigation_js__ = __webpack_require__(81);
-/* unused harmony reexport Navigation */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_4__modules_navigation_navigation_js__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_pagination_pagination_js__ = __webpack_require__(82);
 /* unused harmony reexport Pagination */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modules_scrollbar_scrollbar_js__ = __webpack_require__(83);
@@ -7764,7 +7793,7 @@ function Mousewheel(_ref) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export default */
+/* harmony export (immutable) */ __webpack_exports__["a"] = Navigation;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_create_element_if_not_defined_js__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_dom_js__ = __webpack_require__(1);
 

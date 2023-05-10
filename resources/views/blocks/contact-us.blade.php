@@ -1,10 +1,12 @@
 @php
   $btn = get_field('button');
   $blockId = isset($block) && array_key_exists('anchor', $block) ? $block['anchor'] : '';
+  $hideBlock = get_field('hide');
+  $blockDisplayProperty = $hideBlock ? 'no_display' : '';
 @endphp
 
 @if(!get_field('is_example') && (get_field('visability') != 'hidden' || is_admin()))
-  <section @if($blockId) id="{{$blockId}}" @endif class="contact-us" id="contact">
+  <section @if($blockId) id="{{$blockId}}" @endif class="contact-us {{ $blockDisplayProperty }}" id="contact">
     <div class="container contact-us__container">
       <h2 class="contact-us__title">{!! get_field('title') !!}</h2>
       @if($btn)

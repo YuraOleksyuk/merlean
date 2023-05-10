@@ -1,10 +1,12 @@
 @php
   $image = get_field('image');
   $blockId = isset($block) && array_key_exists('anchor', $block) ? $block['anchor'] : '';
+  $hideBlock = get_field('hide');
+  $blockDisplayProperty = $hideBlock ? 'no_display' : '';
 @endphp
 
 @if(!get_field('is_example') && (get_field('visability') != 'hidden' || is_admin()))
-  <section class="capabilities" @if($blockId) id="{{$blockId}}" @endif>
+  <section class="capabilities {{ $blockDisplayProperty }}" @if($blockId) id="{{$blockId}}" @endif>
     <div class="container capabilities__container">
       <div class="capabilities__content">
         <h2 class="title">{{ get_field('title') }}</h2>

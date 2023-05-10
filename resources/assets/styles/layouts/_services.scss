@@ -139,6 +139,11 @@
       display: -webkit-box;
       -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
+
+      &.small {
+        font-size: 14px;
+        -webkit-line-clamp: 7;
+      }
     }
 
     &--active {

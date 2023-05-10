@@ -1,9 +1,11 @@
 @php
   $people = get_field('people');
   $blockId = isset($block) && array_key_exists('anchor', $block) ? $block['anchor'] : '';
+  $hideBlock = get_field('hide');
+  $blockDisplayProperty = $hideBlock ? 'no_display' : '';
 @endphp
 @if(!get_field('is_example') && (get_field('visability') != 'hidden' || is_admin()))
-  <section class="our-story" @if($blockId) id="{{$blockId}}" @endif>
+  <section class="our-story {{ $blockDisplayProperty }}" @if($blockId) id="{{$blockId}}" @endif>
     <div class="container our-story__container our-story__container--{{sizeof($people)}}">
       <div class="our-story__content">
         <h2 class="title">{{ get_field('title') }}</h2>
@@ -16,7 +18,7 @@
           <div class="our-story__item our-story__item--{{sizeof($people)}}">
             @if($peopleItem['image'])
               <div class="our-story__item-thumb">
-                <img src="{{ $peopleItem['image']['url'] }}" alt="{{ $peopleItem['image']['url'] }}">
+                <img src="{{ $peopleItem['image']['url'] }}" alt="{{ $peopleItem['image']['alt'] }}">
               </div>
             @endif
             @if($peopleItem['linkedin_url'])
